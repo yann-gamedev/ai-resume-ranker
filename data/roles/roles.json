@@ -1,0 +1,783 @@
+{
+    "_meta": {
+        "version": 1,
+        "status": "DRAFT - perlu direview manusia sebelum dipakai",
+        "model_token_limit": 128,
+        "template_note": "Template dijaga pendek (sekitar 50 kata) agar muat di 128 token model embedding. Verifikasi jumlah token dengan tokenizer model, bukan dengan hitungan kata.",
+        "matching_rule": "Cocokkan alias pada teks yang hanya di-lowercase dan spasinya dirapatkan (jangan pakai clean_text(), karena simbol +, #, . penting untuk c#, .net, node.js). Pola regex: (?<![a-z0-9+#.])ALIAS_ESCAPED(?![a-z0-9+#]).",
+        "language_note": "Alias Indonesia dan Inggris digabung dalam satu entri. Id skill memakai istilah Inggris."
+    },
+    "roles": {
+        "backend": {
+            "label": "Backend Developer",
+            "templates": {
+                "id": "Backend Developer: merancang, membangun, dan memelihara aplikasi sisi server serta REST API menggunakan Python, Java, atau Node.js. Bekerja dengan database SQL dan NoSQL, autentikasi, pengujian, Docker, dan deployment cloud. Pengalaman pengembangan software, perancangan sistem, dan kolaborasi tim untuk memecahkan masalah teknis menjadi nilai tambah.",
+                "en": "Backend Developer: design, build, and maintain server-side applications and REST APIs using Python, Java, or Node.js. Work with SQL and NoSQL databases, authentication, testing, Docker, and cloud deployment. Experience in software development, system design, and collaborating with a team to solve technical problems is a plus."
+            },
+            "core_skills": [
+                "rest_api",
+                "docker",
+                "auth",
+                "backend_testing",
+                "git",
+                "api_design"
+            ],
+            "core_groups": [
+                "backend_language",
+                "database_any"
+            ]
+        },
+        "frontend": {
+            "label": "Frontend Developer",
+            "templates": {
+                "id": "Frontend Developer: membangun antarmuka pengguna web yang responsif dan mudah diakses menggunakan HTML, CSS, JavaScript, dan TypeScript dengan React, Vue, atau Angular. Mengintegrasikan REST API, mengelola state aplikasi, mengimplementasikan desain UI/UX dari Figma, dan menulis pengujian komponen. Pengalaman optimasi performa web serta kolaborasi dengan desainer dan backend engineer menjadi nilai tambah.",
+                "en": "Frontend Developer: build responsive, accessible user interfaces for web applications using HTML, CSS, JavaScript, and TypeScript with React, Vue, or Angular. Integrate REST APIs, manage application state, implement UI/UX designs from Figma, and write component tests. Experience in web performance and collaborating with designers and backend engineers is a plus."
+            },
+            "core_skills": [
+                "html",
+                "css",
+                "javascript",
+                "responsive_design",
+                "rest_api",
+                "git",
+                "frontend_testing"
+            ],
+            "core_groups": [
+                "frontend_framework"
+            ]
+        }
+    },
+    "groups": {
+        "backend_language": {
+            "label": "Bahasa backend (Python/Java/Node.js/PHP/Go/C#/Ruby)",
+            "any_of": [
+                "python",
+                "java",
+                "nodejs",
+                "php",
+                "golang",
+                "csharp_dotnet",
+                "ruby"
+            ]
+        },
+        "database_any": {
+            "label": "Database (SQL/NoSQL)",
+            "any_of": [
+                "sql",
+                "mysql",
+                "postgresql",
+                "mongodb",
+                "redis",
+                "database"
+            ]
+        },
+        "frontend_framework": {
+            "label": "Framework UI (React/Vue/Angular/Svelte/Next.js/Nuxt)",
+            "any_of": [
+                "react",
+                "vue",
+                "angular",
+                "svelte",
+                "nextjs",
+                "nuxt"
+            ]
+        }
+    },
+    "skills": [
+        {
+            "id": "html",
+            "name": "HTML",
+            "aliases": [
+                "html",
+                "html5"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "css",
+            "name": "CSS",
+            "aliases": [
+                "css",
+                "css3"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "javascript",
+            "name": "JavaScript",
+            "aliases": [
+                "javascript",
+                "ecmascript",
+                "es6"
+            ],
+            "roles": [
+                "frontend",
+                "backend"
+            ]
+        },
+        {
+            "id": "typescript",
+            "name": "TypeScript",
+            "aliases": [
+                "typescript"
+            ],
+            "roles": [
+                "frontend",
+                "backend"
+            ]
+        },
+        {
+            "id": "react",
+            "name": "React",
+            "aliases": [
+                "react",
+                "react.js",
+                "reactjs"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "vue",
+            "name": "Vue",
+            "aliases": [
+                "vue",
+                "vue.js",
+                "vuejs"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "angular",
+            "name": "Angular",
+            "aliases": [
+                "angular",
+                "angularjs",
+                "angular.js"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "svelte",
+            "name": "Svelte",
+            "aliases": [
+                "svelte",
+                "sveltekit"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "nextjs",
+            "name": "Next.js",
+            "aliases": [
+                "next.js",
+                "nextjs"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "nuxt",
+            "name": "Nuxt",
+            "aliases": [
+                "nuxt",
+                "nuxt.js",
+                "nuxtjs"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "tailwind",
+            "name": "Tailwind CSS",
+            "aliases": [
+                "tailwind",
+                "tailwindcss",
+                "tailwind css"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "bootstrap",
+            "name": "Bootstrap",
+            "aliases": [
+                "bootstrap"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "sass",
+            "name": "Sass/SCSS",
+            "aliases": [
+                "sass",
+                "scss"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "jquery",
+            "name": "jQuery",
+            "aliases": [
+                "jquery"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "state_management",
+            "name": "State management",
+            "aliases": [
+                "redux",
+                "zustand",
+                "pinia",
+                "vuex",
+                "state management",
+                "manajemen state"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "build_tools",
+            "name": "Build tools",
+            "aliases": [
+                "webpack",
+                "vite",
+                "rollup",
+                "babel"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "responsive_design",
+            "name": "Responsive design",
+            "aliases": [
+                "responsive design",
+                "responsive web",
+                "desain responsif",
+                "web responsif",
+                "tampilan responsif"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "accessibility",
+            "name": "Accessibility",
+            "aliases": [
+                "accessibility",
+                "wcag",
+                "aksesibilitas",
+                "a11y"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "figma",
+            "name": "Figma",
+            "aliases": [
+                "figma",
+                "adobe xd"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "ui_ux",
+            "name": "UI/UX",
+            "aliases": [
+                "ui/ux",
+                "ux/ui",
+                "ui ux",
+                "ux design",
+                "ui design",
+                "user interface",
+                "user experience",
+                "antarmuka pengguna",
+                "pengalaman pengguna"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "frontend_testing",
+            "name": "Frontend testing",
+            "aliases": [
+                "jest",
+                "cypress",
+                "playwright",
+                "vitest",
+                "react testing library"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "web_performance",
+            "name": "Web performance",
+            "aliases": [
+                "web performance",
+                "lighthouse",
+                "core web vitals",
+                "performa web",
+                "optimasi performa web"
+            ],
+            "roles": [
+                "frontend"
+            ]
+        },
+        {
+            "id": "graphql",
+            "name": "GraphQL",
+            "aliases": [
+                "graphql"
+            ],
+            "roles": [
+                "frontend",
+                "backend"
+            ]
+        },
+        {
+            "id": "rest_api",
+            "name": "REST API",
+            "aliases": [
+                "rest api",
+                "rest apis",
+                "restful",
+                "restful api",
+                "api rest"
+            ],
+            "roles": [
+                "frontend",
+                "backend"
+            ]
+        },
+        {
+            "id": "git",
+            "name": "Git",
+            "aliases": [
+                "git",
+                "github",
+                "gitlab",
+                "bitbucket"
+            ],
+            "roles": [
+                "frontend",
+                "backend"
+            ]
+        },
+        {
+            "id": "python",
+            "name": "Python",
+            "aliases": [
+                "python"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "java",
+            "name": "Java",
+            "aliases": [
+                "java"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "nodejs",
+            "name": "Node.js",
+            "aliases": [
+                "node.js",
+                "nodejs",
+                "node js"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "express",
+            "name": "Express",
+            "aliases": [
+                "express.js",
+                "expressjs"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "nestjs",
+            "name": "NestJS",
+            "aliases": [
+                "nestjs",
+                "nest.js"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "django",
+            "name": "Django",
+            "aliases": [
+                "django"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "flask",
+            "name": "Flask",
+            "aliases": [
+                "flask"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "fastapi",
+            "name": "FastAPI",
+            "aliases": [
+                "fastapi"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "spring",
+            "name": "Spring",
+            "aliases": [
+                "spring boot",
+                "springboot",
+                "spring framework"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "laravel",
+            "name": "Laravel",
+            "aliases": [
+                "laravel"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "php",
+            "name": "PHP",
+            "aliases": [
+                "php"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "golang",
+            "name": "Go",
+            "aliases": [
+                "golang",
+                "go lang"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "csharp_dotnet",
+            "name": "C#/.NET",
+            "aliases": [
+                "c#",
+                ".net",
+                "asp.net",
+                "dotnet",
+                ".net core"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "ruby",
+            "name": "Ruby",
+            "aliases": [
+                "ruby on rails",
+                "ruby"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "sql",
+            "name": "SQL",
+            "aliases": [
+                "sql",
+                "t-sql",
+                "pl/sql"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "mysql",
+            "name": "MySQL",
+            "aliases": [
+                "mysql",
+                "mariadb"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "postgresql",
+            "name": "PostgreSQL",
+            "aliases": [
+                "postgresql",
+                "postgres"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "mongodb",
+            "name": "MongoDB",
+            "aliases": [
+                "mongodb",
+                "mongo"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "redis",
+            "name": "Redis",
+            "aliases": [
+                "redis"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "database",
+            "name": "Database",
+            "aliases": [
+                "database",
+                "basis data",
+                "nosql",
+                "database design",
+                "perancangan basis data"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "orm",
+            "name": "ORM",
+            "aliases": [
+                "orm",
+                "sqlalchemy",
+                "hibernate",
+                "sequelize",
+                "prisma",
+                "eloquent"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "docker",
+            "name": "Docker",
+            "aliases": [
+                "docker",
+                "containerization",
+                "kontainerisasi"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "kubernetes",
+            "name": "Kubernetes",
+            "aliases": [
+                "kubernetes",
+                "k8s"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "cloud",
+            "name": "Cloud",
+            "aliases": [
+                "aws",
+                "amazon web services",
+                "gcp",
+                "google cloud",
+                "azure",
+                "cloud computing"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "cicd",
+            "name": "CI/CD",
+            "aliases": [
+                "ci/cd",
+                "cicd",
+                "jenkins",
+                "github actions",
+                "gitlab ci"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "microservices",
+            "name": "Microservices",
+            "aliases": [
+                "microservices",
+                "microservice",
+                "mikroservis"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "messaging",
+            "name": "Message queue",
+            "aliases": [
+                "kafka",
+                "rabbitmq",
+                "message queue",
+                "antrean pesan"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "auth",
+            "name": "Autentikasi",
+            "aliases": [
+                "authentication",
+                "authorization",
+                "autentikasi",
+                "otorisasi",
+                "jwt",
+                "oauth",
+                "oauth2"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "backend_testing",
+            "name": "Pengujian backend",
+            "aliases": [
+                "unit test",
+                "unit testing",
+                "pytest",
+                "junit",
+                "integration test",
+                "pengujian unit",
+                "pengujian perangkat lunak",
+                "software testing"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "linux",
+            "name": "Linux",
+            "aliases": [
+                "linux",
+                "ubuntu",
+                "bash"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "api_design",
+            "name": "API design",
+            "aliases": [
+                "api design",
+                "perancangan api",
+                "api development",
+                "pengembangan api"
+            ],
+            "roles": [
+                "backend"
+            ]
+        },
+        {
+            "id": "system_design",
+            "name": "System design",
+            "aliases": [
+                "system design",
+                "perancangan sistem",
+                "software architecture",
+                "arsitektur perangkat lunak"
+            ],
+            "roles": [
+                "backend"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+﻿# Local Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.streamlit/secrets.toml
+
+# Private CVs, datasets, and extracted text
+data/sample_cvs/
+data/sample_cvs_debug/
+data/kaggle_subset/
+data/labels/
+data/datasets/
+evaluation/results/
+*.pdf
+*.docx
+*.csv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
